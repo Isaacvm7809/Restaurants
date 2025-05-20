@@ -1,0 +1,42 @@
+
+@port  =  7109
+@host  = https://localhost
+
+# @port =  5120
+### https://localhost:7109/api/WeatherForecast
+
+@Restaurants.API_HostAddress = https://localhost:7109
+
+GET {{Restaurants.API_HostAddress}}/api/Weatherforecast/
+Accept: application/json
+ProjectUrl: {{$projectUrl}}
+Guid: {{$guid}}
+LocalDate : {{$datetime iso8601}}
+Random-int : {{$randomInt}}
+
+###
+
+
+
+GET {{Restaurants.API_HostAddress}}/api/weatherforecast/25/example?max=12
+
+###
+
+
+@Name=string
+POST {{Restaurants.API_HostAddress}}/api/weatherforecast?Name={{Name}}
+
+###
+
+
+
+@count=4
+POST {{Restaurants.API_HostAddress}}/api/weatherforecast/generate?count={{count}}
+Content-Type: application/json
+
+{
+  "min" : -10,
+  "max" : 23
+}
+
+###
