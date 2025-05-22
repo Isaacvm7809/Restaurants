@@ -1,6 +1,6 @@
-using Restaurants.API.Services;
 using Restaurants.Infrastructure.Extensions;
 using Restaurants.Infrastructure.Seeders;
+using Restaurants.Application.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,12 +11,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
 
 
 
 //Inject the DbContext through the Infrastructure layer
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication();
 
 
 var app = builder.Build();

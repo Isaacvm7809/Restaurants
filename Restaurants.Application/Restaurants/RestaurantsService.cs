@@ -1,15 +1,19 @@
 ﻿
 
+using Microsoft.Extensions.Logging;
 using Restaurants.Domain.Entities;
-using Restaurants.Domain.Repositores;
+using Restaurants.Domain.Repositories;
 
 namespace Restaurants.Application.Restaurants
 {
-    internal class RestaurantsService(IRestaurantsRepository restaurants)
+    internal class RestaurantsService(IRestaurantsRepository restaurantsRepository, ILogger<RestaurantsService> logger) : IRestaurantsService
     {
-        public Task<IEnumerable<Restaurant>> GetAllRestaurants()
+        public async Task<IEnumerable<Restaurant>> GetAllRestaurants()
         {
-            
+            logger.LogInformation("Getting All Restaurants");
+            return await restaurantsRepository.GetAllAsync();
         }
+
+
     }
 }
