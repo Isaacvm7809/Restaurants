@@ -7,6 +7,12 @@
 
 @Restaurants.API_HostAddress = https://localhost:7109
 
+
+
+
+
+
+
 GET {{Restaurants.API_HostAddress}}/api/Weatherforecast/
 Accept: application/json
 ProjectUrl: {{$projectUrl}}
@@ -38,5 +44,16 @@ Content-Type: application/json
   "min" : -10,
   "max" : 23
 }
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants
+
+###
+
+
+
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/675A38A0-165F-4C82-86E4-ECFA54B703A5
 
 ###

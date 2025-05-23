@@ -7,8 +7,8 @@ namespace Restaurants.Domain.Repositories
     public interface IRestaurantsRepository
     {
         Task<IEnumerable<Restaurant>> GetAllAsync();
+        Task<Restaurant?> GetRestaurantByIdAsync(Guid id);
 
-        //Task<Restaurant> GetRestaurantByIdAsync(Guid id, CancellationToken cancellationToken = default);
         //Task AddRestaurantAsync(Restaurant restaurant, CancellationToken cancellationToken = default);
         //Task UpdateRestaurantAsync(Restaurant restaurant, CancellationToken cancellationToken = default);
         //Task DeleteRestaurantAsync(Guid id, CancellationToken cancellationToken = default);

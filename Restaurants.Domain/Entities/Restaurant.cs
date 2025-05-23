@@ -14,7 +14,7 @@ namespace Restaurants.Domain.Entities
 
 
         public Address? Address { get; set; } = default!;
-        public List<Dish> Dishes { get; set; } = new();
+        public List<Dish> Dishes { get; set; } = [];
 
 
 

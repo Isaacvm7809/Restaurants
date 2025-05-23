@@ -20,6 +20,7 @@ namespace Restaurants.Infrastructure.Persistence
             modelBuilder.Entity<Restaurant>()
                 .OwnsOne(r => r.Address);
 
+
             modelBuilder.Entity<Restaurant>()
                 .HasMany(r => r.Dishes)
                 .WithOne()
